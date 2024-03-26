@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+    {% if show_alert %}
+        <script>
+            alert("{{ alert }}");
+        </script>
+    {% endif %}
+
+    <main class=" d-flex justify-content-center row">
+        <div>
+            <h1 class="titulo text-center mb-5 mt-5" style="color: white;">Bem vindo! Faça seu login.</h1>
+        </div>
+        <div class="card" style="width: 60%;">
+            <form action="/submit" method="post" class="form ms-5 mt-5 me-5 d-flex justify-content-center row">
+                <div class="mb-3 me-5">
+                    <label for="inputEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Digite seu nome email">
+                    </div>
+                <div class="mb-3 me-5">
+                    <label for="inputPassword" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Digite sua senha">
+                </div>
+                <button type="submit" class="btn btn-light mb-3" style="width: 80px;">Entrar</button>
+            </form>
+        </div>
+
+    </main>
+
+{% endblock %} 
